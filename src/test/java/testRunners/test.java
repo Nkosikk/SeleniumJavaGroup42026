@@ -1,2 +1,4 @@
-package testRunners;public class test {
+package testRunners;
+
+public class test {
 }
