@@ -8,6 +8,6 @@ public class Base {
 
     static final BrowserFactory factory = new BrowserFactory();
     public static final WebDriver driver = factory.launchBrowser("chrome","https://ndosisimplifiedautomation.vercel.app/");
-    HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+    public HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
 }

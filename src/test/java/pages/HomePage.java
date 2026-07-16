@@ -7,7 +7,7 @@ public class HomePage {
 
     WebDriver driver;
 
-    By homeScreen_xpath = By.xpath("//button[@class='nav-item ']/span[contains(text(),'Home')]");
+    By homeScreen_xpath = By.xpath("//button[@class='nav-item active']/span[contains(text(),'Home')]");
     By mainLoginButton_xpath = By.xpath("//div[@class='nav-user-section']/button/span[contains(text(),'Login')]");
 
     public HomePage(WebDriver driver){
