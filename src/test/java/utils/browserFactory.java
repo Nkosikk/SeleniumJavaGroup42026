@@ -14,7 +14,7 @@ public class browserFactory {
 
     static WebDriver driver;
 
-    public static void launchBrowser(String browserName, String url) {
+    public static WebDriver launchBrowser(String browserName, String url) {
 
         if (browserName.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
@@ -32,6 +32,7 @@ public class browserFactory {
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
+        return null;
     }
     @Test
     public void provider(){
