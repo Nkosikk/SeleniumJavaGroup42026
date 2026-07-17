@@ -32,10 +32,7 @@ public class browserFactory {
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        return null;
-    }
-    @Test
-    public void provider(){
-        launchBrowser("firefox","https://ndosisimplifiedautomation.vercel.app");
+        return driver;
+
     }
 }
