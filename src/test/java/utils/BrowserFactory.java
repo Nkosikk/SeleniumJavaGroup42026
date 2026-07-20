@@ -6,28 +6,33 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.Test;
 
+import java.nio.file.attribute.UserPrincipalLookupService;
 import java.time.Duration;
 
 public class BrowserFactory {
 
-    static WebDriver driver;
+    WebDriver driver;
 
-    public static WebDriver launchBrowser(String browserChoice, String url){
+    public WebDriver launchBrowser(String browserChoice, String url) {
 
-        if (browserChoice.equalsIgnoreCase("cHroMe")){
+        if (browserChoice.equalsIgnoreCase("chrome")){
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--incognito");
             options.addArguments("--headless=new");
             driver = new ChromeDriver(options);
 
-        }else if (browserChoice.equalsIgnoreCase("Firefox")){
+        } else if (browserChoice.equalsIgnoreCase("firefox")) {
+
             driver = new FirefoxDriver();
 
-        }else if (browserChoice.equalsIgnoreCase("Safari")){
+        } else if (browserChoice.equalsIgnoreCase("safari")) {
+
             driver = new SafariDriver();
 
-        }else {
+        } else {
+
             driver = new EdgeDriver();
         }
 
@@ -37,6 +42,8 @@ public class BrowserFactory {
 
 
         return driver;
+
     }
 
 }
+
