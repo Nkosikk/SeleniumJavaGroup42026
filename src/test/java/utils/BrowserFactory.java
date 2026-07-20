@@ -25,7 +25,7 @@ public class BrowserFactory {
 
             ChromeOptions options= new ChromeOptions();
 
-            //options.addArguments("--incognito");
+            options.addArguments("--incognito");
 
             driver = new ChromeDriver(options);
         }
@@ -51,7 +51,7 @@ public class BrowserFactory {
 
         driver.get(url);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
         return driver;
     }
