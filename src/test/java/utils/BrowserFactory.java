@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -22,16 +23,16 @@ public class BrowserFactory {
 
         if(browserChoice.equalsIgnoreCase("Chrome")){
 
-            ChromeOptions options = new ChromeOptions();
+            ChromeOptions options= new ChromeOptions();
 
-            options.addArguments("--incognito");
-
-            options.addArguments("--headless=new ");
+            //options.addArguments("--incognito");
 
             driver = new ChromeDriver(options);
         }
         else if (browserChoice.equalsIgnoreCase("Firefox")){
 
+            //FirefoxOptions options=new FirefoxOptions();
+            //options.addArguments("--incognito");
             driver = new FirefoxDriver();
         }
         else if (browserChoice.equalsIgnoreCase("safari")){
