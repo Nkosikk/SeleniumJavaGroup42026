@@ -39,14 +39,12 @@ public class BrowserFactory {
 
             driver = new SafariDriver();
         }
-        else{
+        else {
             EdgeOptions options = new EdgeOptions();
+            options.addArguments("--incognito");
 
-            options.addArguments("--in-private");
-
-            driver = new EdgeDriver(options);
+            driver = new EdgeDriver();
         }
-
         driver.manage().window().maximize();
 
         driver.get(url);

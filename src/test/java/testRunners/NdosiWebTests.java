@@ -14,26 +14,32 @@ public class NdosiWebTests extends Base {
 
         homePage.verifiesLandingPageContent();
     }
-    @Test(priority = 1)
-    public void clickLoginbutton() {
+    @Test(dependsOnMethods = "verifyHomeContentTest")
+    public void clickLoginButton() {
         homePage.MainLoginButtonLogin();
     }
 
 
     // LOGIN PAGE TESTS
 
-    @Test(priority = 2)
+    @Test(dependsOnMethods = "clickLoginButton")
     public void EnterEmail(){
         loginPage.enterEmail();
     }
-    @Test(priority = 3)
+
+    @Test(dependsOnMethods = "EnterEmail")
     public  void EnterPassword(){
         loginPage.enterPassword();
     }
-    @Test(priority = 4)
+
+    @Test(dependsOnMethods = "EnterPassword")
     public void ClickLogin(){
         loginPage.clickSubmit();
     }
 
+    // DASHBOARD TESTS
+
+
+    // BASIC FORM TESTS
 
 }

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
 
-    //1. Fistly we instantiate my driver as a global variable in my class
+    //1. firstly we instantiate my driver as a global variable in my class
 
     WebDriver driver;
 

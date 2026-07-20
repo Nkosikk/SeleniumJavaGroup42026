@@ -9,8 +9,8 @@ public class HomePage {
 
 
     // Constructor method.
-    public HomePage(WebDriver driver) {
 
+    public HomePage(WebDriver driver){
         this.driver = driver;
     }
 
@@ -26,6 +26,7 @@ public class HomePage {
 
     public void verifiesLandingPageContent(){
         driver.findElement(homeScreen_xpath).isDisplayed();
+
     }
 
     // method that clicks on the landing page login button.
@@ -33,8 +34,6 @@ public class HomePage {
     public void MainLoginButtonLogin(){
         driver.findElement(mainLoginButton).click();
     }
-
-
 }
 
 
