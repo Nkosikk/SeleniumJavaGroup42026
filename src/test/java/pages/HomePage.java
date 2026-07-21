@@ -9,9 +9,9 @@ public class HomePage {
 
 
         //Finding elements
-        By homeScreen_xpath = By.xpath("//button[@class='nav-item ']/span[contains(text(),'Home')]");
+        By homeScreen_xpath = By.xpath("//button[@class='nav-item active']/span[contains(text(),'Home')]");
 
-        By mainLoginButton = By.XPath("//div[@class='nav-user-section ']/button/span[contains(text(), 'Logon')]");
+        By mainLoginButton = By.xpath("//div[@class='nav-user-section']/button/span[contains(text(),'Logon')]");
 
         //Constructor
             public HomePage(WebDriver driver){

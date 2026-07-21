@@ -20,7 +20,7 @@ public class BrowserFactory {
         if (browserChoice.equalsIgnoreCase("chrome")){
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--incognito");
-            options.addArguments("--headless=new");
+           // options.addArguments("--headless=new");
             driver = new ChromeDriver(options);
 
         } else if (browserChoice.equalsIgnoreCase("firefox")) {
@@ -38,7 +38,7 @@ public class BrowserFactory {
 
         driver.manage().window().maximize();
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 
         return driver;
