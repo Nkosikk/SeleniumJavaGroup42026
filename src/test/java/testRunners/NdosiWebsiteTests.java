@@ -12,7 +12,7 @@ public class NdosiWebsiteTests extends Base {
      homePage.verifyHomeScreenContent();
     }
 
-    @Test(dependsOnMethods = "verifyHomeContentTest")
+    @Test(priority = 1)
     public void submitLoginScreenTest(){
         homePage.clickMainLoginButton();
         loginPage.enterEmail("ituselenium@ndosi.co.za");
@@ -20,7 +20,7 @@ public class NdosiWebsiteTests extends Base {
         loginPage.selectLogin();
     }
 
-    @Test(priority = 1)
+    @Test(dependsOnMethods = "submitLoginScreenTest")
     public void verifyLoginFlowSuccessfulTest(){
         dashBoardPage.verifyDashboardPage();
     }
