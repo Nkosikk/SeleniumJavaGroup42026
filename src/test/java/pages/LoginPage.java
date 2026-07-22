@@ -18,12 +18,12 @@ public class LoginPage {
 
     }
 
-    public void enterEmail(){
-        driver.findElement(loginEmail_id).isDisplayed();
+    public void enterEmail(String email){
+        driver.findElement(loginEmail_id).sendKeys(email);
     }
 
-    public void enterPassword(){
-        driver.findElement(loginPassword_id).isDisplayed();
+    public void enterPassword(String password){
+        driver.findElement(loginPassword_id).sendKeys(password);
     }
 
     public void selectLogin(){
@@ -31,11 +31,11 @@ public class LoginPage {
     }
 
     public  void clickForgotPasswordLink(){
-        driver.findElement(forgotPasswordLink_id);
+        driver.findElement(forgotPasswordLink_id).click();
     }
 
     public void clickSignUpLink(){
-        driver.findElement(signupHereLink_id);
+        driver.findElement(signupHereLink_id).click();
     }
 
 }

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import pages.HomePage;
 import pages.LoginPage;
+import pages.dashBoardPage;
 
 public class Base {
 
@@ -11,6 +12,8 @@ public class Base {
     public static final WebDriver driver = factory.launchBrowser("chrome","https://ndosisimplifiedautomation.vercel.app/");
 
     public HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-    LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+    public LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+
+    public dashBoardPage dashBoardPage = PageFactory.initElements(driver, pages.dashBoardPage.class);
 
 }

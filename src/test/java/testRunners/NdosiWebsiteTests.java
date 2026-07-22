@@ -11,4 +11,17 @@ public class NdosiWebsiteTests extends Base {
     public void verifyHomeContentTest() {
      homePage.verifyHomeScreenContent();
     }
+
+    @Test(dependsOnMethods = "verifyHomeContentTest")
+    public void submitLoginScreenTest(){
+        homePage.clickMainLoginButton();
+        loginPage.enterEmail("ituselenium@ndosi.co.za");
+        loginPage.enterPassword("@1234567#");
+        loginPage.selectLogin();
+    }
+
+    @Test(priority = 1)
+    public void verifyLoginFlowSuccessfulTest(){
+        dashBoardPage.verifyDashboardPage();
+    }
 }
