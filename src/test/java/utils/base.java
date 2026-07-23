@@ -1,6 +1,7 @@
 package utils;
 
 import org.openqa.selenium.WebDriver;
+import pages.dashboardPage;
 import pages.homePage;
 import org.openqa.selenium.support.PageFactory;
 import pages.loginPage;
@@ -16,4 +17,5 @@ public class base {
     public homePage homePage = PageFactory.initElements(driver, homePage.class);
 
     public loginPage loginPage = PageFactory.initElements(driver, loginPage.class);
+    public dashboardPage dashboardPage = PageFactory.initElements(driver, dashboardPage.class);
 }

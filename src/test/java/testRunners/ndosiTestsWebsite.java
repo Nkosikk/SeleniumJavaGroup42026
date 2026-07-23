@@ -16,4 +16,9 @@ public class ndosiTestsWebsite extends utils.base {
         loginPage.enterPassword("tlou@97LT");
         loginPage.clickSubmitButton();
     }
+
+    @Test(priority = 3)
+    public void verifyLoginFlowIsSuccessfulTest() {
+        dashboardPage.verifyDashboardPageContent();
+    }
 }
