@@ -9,7 +9,7 @@ public class LoginPage {
 
     By username_id = By.id("login-email");
     By password_id = By.id("login-password");
-    By loginButton_name = By.name("loginSubmit");
+    By loginButton_name = By.name("loginSubmitSbu");
 
     public LoginPage(WebDriver driver){
         this.driver = driver;

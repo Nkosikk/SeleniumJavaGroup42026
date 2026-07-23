@@ -20,7 +20,7 @@ public class ExtentReportManager implements ITestListener {
         sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"/Reports/NdosiExecutionReport.xml");
         sparkReporter.config().setDocumentTitle("Ndosi Automation");
         sparkReporter.config().setReportName("Functional Test");
-        sparkReporter.config().setTheme(Theme.DARK);
+        sparkReporter.config().setTheme(Theme.STANDARD);
 
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
