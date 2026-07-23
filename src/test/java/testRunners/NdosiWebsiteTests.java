@@ -1,5 +1,6 @@
 package testRunners;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import utils.Base;
 
@@ -23,5 +24,9 @@ public class NdosiWebsiteTests extends Base {
         dashboardPage.verifyDashboardContent();
     }
 
+    @AfterClass
+    public void closeBrowser(){
+        driver.quit();
+    }
 
 }
