@@ -9,19 +9,31 @@ public class homePage {
 
     By homeScreen_xpath =By.xpath("//button[@class='nav-item active']/span[contains(text(),\"Home\")]");
 
-    By mainLoginButton_xpath = By.xpath("//div[@class='nav-user-section']/button/span[contains(text),\"Login)]\")]");
+    By mainLoginButton_xpath = By.xpath("//div[@class='nav-user-section']/button/span[contains(text(),\"Login\")]");
 
     public homePage(WebDriver driver) {
         this.driver = driver;
+
     }
 
-
-        public void verifyHomeScreenContent() {
+        public void verifyHomeScreenContent(){
             driver.findElement(homeScreen_xpath).isDisplayed();
         }
-
-        public void clickMainLoginButton() {
-            driver.findElement(mainLoginButton_xpath).click();
+        public void verifyMainLoginButtonContent(){
+            driver.findElement(mainLoginButton_xpath).isDisplayed();
         }
+
+    public void clickMainLoginButton() {
+        driver.findElement(mainLoginButton_xpath).click();
     }
+}
+
+
+
+
+
+
+
+
+
 
