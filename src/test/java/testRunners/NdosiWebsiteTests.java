@@ -13,8 +13,8 @@ public class NdosiWebsiteTests extends Base {
     @Test(priority = 2)
     public void submitLoginDetailsTest(){
         homePage.clickMainLoginButton();
-        loginPage.enterUsername("nkwanyana@gmail.com");
-        loginPage.enterPassword("#12345678");
+        loginPage.enterUsername("titi@gmail.com");
+        loginPage.enterPassword("tlou@97LT");
         loginPage.loginButton();
     }
 

@@ -27,4 +27,6 @@ public class LoginPage {
         driver.findElement(loginButton_name).click();
     }
 
+    public void clickSubmitButton() {
+    }
 }
