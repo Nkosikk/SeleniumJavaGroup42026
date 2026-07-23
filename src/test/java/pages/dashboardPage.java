@@ -3,17 +3,18 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class dashboardPage {
+public class DashboardPage {
 
     WebDriver driver;
 
     By welcomePage_xpath = By.xpath("//h2");
 
-    public dashboardPage(WebDriver driver) {
+    public DashboardPage(WebDriver driver){
         this.driver = driver;
     }
 
-    public void verifyDashboardPageContent() {
+    public void verifyDashboardContent(){
         driver.findElement(welcomePage_xpath).isDisplayed();
     }
+
 }

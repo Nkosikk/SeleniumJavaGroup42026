@@ -1,21 +1,17 @@
 package utils;
 
 import org.openqa.selenium.WebDriver;
-import pages.dashboardPage;
-import pages.homePage;
 import org.openqa.selenium.support.PageFactory;
-import pages.loginPage;
-import utils.browserFactory;
+import pages.DashboardPage;
+import pages.HomePage;
+import pages.LoginPage;
 
-public class base {
+public class Base {
 
+    static final BrowserFactory factory = new BrowserFactory();
+    public static final WebDriver driver = factory.launchBrowser("chrome","https://ndosisimplifiedautomation.vercel.app/");
+    public HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+    public LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+    public DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
 
-    static final browserFactory factory = new browserFactory();
-
-    public static final WebDriver driver = browserFactory.launchBrowser("chrome","https://ndosisimplifiedautomation.vercel.app/#overview");
-
-    public homePage homePage = PageFactory.initElements(driver, homePage.class);
-
-    public loginPage loginPage = PageFactory.initElements(driver, loginPage.class);
-    public dashboardPage dashboardPage = PageFactory.initElements(driver, dashboardPage.class);
 }
