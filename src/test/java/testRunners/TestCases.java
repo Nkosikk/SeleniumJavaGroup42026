@@ -52,16 +52,4 @@ public class TestCases extends Base {
         dashboardPage.pickLearningMaterial();
     }
 
-    // Learning material page TESTS
-
-    @Test(dependsOnMethods = "ClickLearnDropdown")
-    public void clickBasicFormButton(){
-        learningMaterialPage.clickBasicFormButton();
-    }
-
-    // BASIC FORM TESTS
-
-
-
-
 }

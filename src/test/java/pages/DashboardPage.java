@@ -25,12 +25,15 @@ public class DashboardPage {
     //4. Create your methods
 
     public boolean verifyLoggedIn(){
-       return driver.findElement(myLearning_element).isDisplayed();
+
+        return driver.findElement(myLearning_element).isDisplayed();
     }
     public void clickLearnDropdown(){
+
         driver.findElement(learnDropdown_element).click();
     }
     public void pickLearningMaterial(){
+
         driver.findElement(learningMaterial_element).click();
     }
 }
