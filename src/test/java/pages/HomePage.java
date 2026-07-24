@@ -7,6 +7,8 @@ public class HomePage {
 
 WebDriver driver;
 
+
+
 By homeScreenXpath = By.xpath("//h1[contains(text(),'Welcome to Ndosis Simplified Automation')]");
 
 By mainLoginButtonXpath = By.xpath("//button[contains(text(),'Main Login')]");
