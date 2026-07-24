@@ -17,16 +17,20 @@ public class DashboardPage {
 
     //3. Define page elements
 
-    //By myLearning_element = By.xpath("//*[@id=\"app-root\"]/nav/div[1]/div[3]/div/button/span[1]");
-    //By learnDropdown_element = By.xpath("");
+    By myLearning_element = By.xpath("//button[@class=\"nav-dropdown-trigger  has-active\"]/span[contains(text(), 'My Learning')]");
+    By learnDropdown_element = By.xpath("//button[contains(@class,'nav-dropdown-trigger')]/span[text()='Learn']");
+    By learningMaterial_element = By.xpath("//button[contains(@class,'nav-dropdown-item')]/span[text()='Learning Materials']");
 
 
     //4. Create your methods
 
-    public void verifyLoggedIn(){
-        driver.findElement(myLearning_element).isDisplayed();
+    public boolean verifyLoggedIn(){
+       return driver.findElement(myLearning_element).isDisplayed();
     }
     public void clickLearnDropdown(){
-        driver.findElement()
+        driver.findElement(learnDropdown_element).click();
+    }
+    public void pickLearningMaterial(){
+        driver.findElement(learningMaterial_element).click();
     }
 }
