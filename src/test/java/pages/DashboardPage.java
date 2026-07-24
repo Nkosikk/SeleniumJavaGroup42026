@@ -24,9 +24,9 @@ public class DashboardPage {
 
     //4. Create your methods
 
-    public boolean verifyLoggedIn(){
+    public void verifyLoggedIn(){
 
-        return driver.findElement(myLearning_element).isDisplayed();
+        driver.findElement(myLearning_element).isDisplayed();
     }
     public void clickLearnDropdown(){
 

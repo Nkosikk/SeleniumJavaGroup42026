@@ -1,5 +1,6 @@
 package testRunners;
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import utils.Base;
 
@@ -50,6 +51,11 @@ public class TestCases extends Base {
     @Test(dependsOnMethods = "ClickLearnDropdown")
     public  void ClickLearningMaterial(){
         dashboardPage.pickLearningMaterial();
+    }
+
+    @AfterTest
+    public void closeBrowser(){
+        driver.quit();
     }
 
 }
