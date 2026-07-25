@@ -1,3 +1,5 @@
+package basic;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -56,9 +58,7 @@ public void EnterEmail() throws InterruptedException{
         Thread.sleep(10000);
     }
 
-    public void Rest(){
-        driver.quit();
-    }
+
 
 }
 
