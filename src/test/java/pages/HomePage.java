@@ -7,7 +7,7 @@ public class HomePage {
     WebDriver driver;
 
 
-    By homeScreen_xpath = By.xpath("//button[@class='nav-item']/span[contains(text(),'Home')]");
+    By homeScreen_xpath = By.xpath("//*[@id=\"app-root\"]/nav/div[1]/div[2]/button[1]/span[2]");
     By mainLoginButton_xpath = By.xpath("//*[@id=\"app-root\"]/nav/div[1]/div[3]/button/span[2]");
 
 
@@ -16,7 +16,7 @@ public class HomePage {
 
     }
 
-    public void verifyHomeScreenContend(){
+    public void verifyHomeScreenContent(){
         driver.findElement(homeScreen_xpath).isDisplayed();
 
     }
