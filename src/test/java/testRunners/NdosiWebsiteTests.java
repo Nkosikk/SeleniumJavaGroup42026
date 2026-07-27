@@ -21,4 +21,8 @@ public class NdosiWebsiteTests extends Base {
     public void verifyLoginFlowSuccessfulTest(){
         dashBoardPage.verifyDashboardPage();
     }
+
+    public void closeBrowser(){
+        driver.quit();
+    }
 }
