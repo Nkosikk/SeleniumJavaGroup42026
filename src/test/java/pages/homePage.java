@@ -14,12 +14,18 @@ public class HomePage {
         this.driver = driver;
     }
 
-    public void verifyHomeScreenContent(){
+
+
+    public void verifyHomeScreenContent() {
+        System.out.println("HomePage driver = " + driver);
         driver.findElement(homeScreen_xpath).isDisplayed();
+
     }
+
 
     public void clickMainLoginButton(){
         driver.findElement(mainLoginButton_xpath).click();
+
     }
 
 }
