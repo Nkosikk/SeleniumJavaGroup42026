@@ -5,29 +5,12 @@ import org.openqa.selenium.WebDriver;
 
 public class DashboardPage {
 
-    //1. Instantiate driver on page as global variable
-
     WebDriver driver;
 
-    //2. create the constructor method
 
     public DashboardPage(WebDriver driver){
-
         this.driver = driver;
     }
 
-    //3. Define page elements.
-
-    By myLearning_element = By.xpath("//button[@class=\"nav-dropdown-trigger  has-active\"]/span[contains(text(), 'My Learning')]");
-
-
-    //4. Create your Descriptive methods.
-
-    public void verifyLoggedIn(){
-
-        driver.findElement(myLearning_element).isDisplayed();
-    }
-    public void clickLearnDropdown(){
-
-    }
 }
+
