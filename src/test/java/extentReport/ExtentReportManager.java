@@ -15,6 +15,7 @@ public class ExtentReportManager implements ITestListener {
     private static ExtentReports extent; //Populate common information in the report
     private static ExtentTest test; //Creates test cases in the report
 
+    @Override
     public void onStart(ITestContext context){
         //
         sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"/Reports/NdosiExecutionReport.xml");
@@ -31,23 +32,27 @@ public class ExtentReportManager implements ITestListener {
 
     }
 
+    @Override
     public void onTestFailure(ITestResult result){
         test = extent.createTest(result.getName());
         test.log(Status.FAIL, "Test case "+result.getMethod().getMethodName() + " has failed");
         test.log(Status.FAIL, result.getThrowable());
     }
 
+    @Override
     public void onTestSuccess(ITestResult result){
         test = extent.createTest(result.getName());
         test.log(Status.PASS, "Test case "+result.getMethod().getMethodName());
 
     }
 
+    @Override
     public void onTestSkipped(ITestResult result){
         test = extent.createTest(result.getName());
         test.log(Status.SKIP, "Test case "+result.getMethod().getMethodName());
     }
 
+    @Override
     public void onFinish(ITestContext context){
         extent.flush();
     }
