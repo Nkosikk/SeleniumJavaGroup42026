@@ -7,6 +7,7 @@ import utils.Base;
 
 public class NdosiWebsiteTests extends Base {
 
+
     @Test(priority = 1)
     public void verifyHomeContentTest(){
         homePage.verifyHomeScreenContent();
@@ -21,7 +22,7 @@ public class NdosiWebsiteTests extends Base {
     }
 
     @Test(dependsOnMethods = "submitLoginDetailsTest")
-    public void verifyLoginFlowIsSuccessfulTest() throws InterruptedException {
+    public void verifyLoginFlowIsSuccessfulTest() {
         dashboardPage.verifyDashboardContent();
     }
 

@@ -21,9 +21,8 @@ public class DashboardPage {
         this.driver = driver;
     }
 
-    public void verifyDashboardContent() throws InterruptedException {
-        Thread.sleep(30);
-//        new WebDriverWait(driver, Duration.ofSeconds(60)).until(ExpectedConditions.visibilityOf(welcomePage_xpath));
+    public void verifyDashboardContent() {
+        new WebDriverWait(driver, Duration.ofSeconds(60)).until(ExpectedConditions.visibilityOf(welcomePage_xpath));
 //        driver.findElement(welcomePage_xpath).isDisplayed();
         welcomePage_xpath.isDisplayed();
     }
