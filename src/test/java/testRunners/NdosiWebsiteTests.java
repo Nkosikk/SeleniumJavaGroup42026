@@ -21,7 +21,7 @@ public class NdosiWebsiteTests extends Base {
     }
 
     @Test(dependsOnMethods = "submitLoginDetailsTest")
-    public void verifyLoginFlowIsSuccessfulTest(){
+    public void verifyLoginFlowIsSuccessfulTest() throws InterruptedException {
         dashboardPage.verifyDashboardContent();
     }
 
