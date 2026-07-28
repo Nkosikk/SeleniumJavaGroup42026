@@ -43,7 +43,7 @@ public class BrowserFactory {
             EdgeOptions options = new EdgeOptions();
             options.addArguments("--incognito");
 
-            driver = new EdgeDriver();
+            driver = new EdgeDriver(options);
         }
         driver.manage().window().maximize();
 

@@ -11,6 +11,7 @@ public class HomePage {
     // Constructor method.
 
     public HomePage(WebDriver driver){
+
         this.driver = driver;
     }
 

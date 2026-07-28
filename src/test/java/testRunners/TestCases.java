@@ -1,12 +1,14 @@
 package testRunners;
 
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import utils.Base;
 
 public class TestCases extends Base {
 
-    // HOMEPAGE TESTS
+    // HOMEPAGE TESTS.
 
     @Test
     public void verifyHomeContentTest() {
@@ -15,9 +17,9 @@ public class TestCases extends Base {
     }
     @Test(dependsOnMethods = "verifyHomeContentTest")
     public void clickLoginButton() {
+
         homePage.MainLoginButtonLogin();
     }
-
 
     // LOGIN PAGE TESTS
 
@@ -42,19 +44,24 @@ public class TestCases extends Base {
 
     @Test(dependsOnMethods = "ClickLogin")
     public void VerifyDashboardElement(){
+
         dashboardPage.verifyLoggedIn();
     }
+
     @Test(dependsOnMethods = "VerifyDashboardElement")
     public void ClickLearnDropdown(){
+
         dashboardPage.clickLearnDropdown();
     }
+
     @Test(dependsOnMethods = "ClickLearnDropdown")
     public  void ClickLearningMaterial(){
         dashboardPage.pickLearningMaterial();
     }
 
-    @AfterTest
+    @AfterClass
     public void closeBrowser(){
+
         driver.quit();
     }
 

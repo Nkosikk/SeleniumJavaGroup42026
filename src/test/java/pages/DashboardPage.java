@@ -12,17 +12,18 @@ public class DashboardPage {
     //2. create the constructor method
 
     public DashboardPage(WebDriver driver){
+
         this.driver = driver;
     }
 
-    //3. Define page elements
+    //3. Define page elements.
 
     By myLearning_element = By.xpath("//button[@class=\"nav-dropdown-trigger  has-active\"]/span[contains(text(), 'My Learning')]");
     By learnDropdown_element = By.xpath("//button[contains(@class,'nav-dropdown-trigger')]/span[text()='Learn']");
     By learningMaterial_element = By.xpath("//button[contains(@class,'nav-dropdown-item')]/span[text()='Learning Materials']");
 
 
-    //4. Create your methods
+    //4. Create your Descriptive methods.
 
     public void verifyLoggedIn(){
 

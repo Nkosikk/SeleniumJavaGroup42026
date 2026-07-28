@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/THAPELO SEGWE/Desktop/NdosiProject/SeleniumJavaGroup42026">
+        <classes>
+            <class name="basics.loginToNdosiWebsiteMultipleMethod">
+                <methods>
+                    <include name="clickLogin"/>
+                    <include name="enterEmail"/>
+                    <include name="enterPassword"/>
+                    <include name="clickSubmit"/>
+                    <include name="verifyLogin"/>
+                </methods>
+            </class>
+            <class name="basics.loginToNdosiWebsiteOneMethod">
+                <methods>
+                    <include name="loginToNdosiWebsiteTests"/>
+                </methods>
+            </class>
+            <class name="testRunners.TestCases">
+                <methods>
+                    <include name="verifyHomeContentTest"/>
+                    <include name="clickLoginButton"/>
+                    <include name="EnterEmail"/>
+                    <include name="EnterPassword"/>
+                    <include name="ClickLogin"/>
+                    <include name="VerifyDashboardElement"/>
+                    <include name="ClickLearnDropdown"/>
+                    <include name="ClickLearningMaterial"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

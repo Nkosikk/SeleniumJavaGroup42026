@@ -29,7 +29,7 @@ public class ExtentReportManager implements ITestListener {
         extent.attachReporter(sparkReporter);
         extent.setSystemInfo("OS", System.getProperty("os.name"));
         extent.setSystemInfo("Execution Machine", System.getProperty("user.name"));
-        extent.setSystemInfo("Browse", "Chrome");
+        extent.setSystemInfo("Browser", "Chrome");
         extent.setSystemInfo("Test Environment", "Staging");
 
     }
@@ -52,6 +52,6 @@ public class ExtentReportManager implements ITestListener {
 
 public void onFinish(ITestContext context){
         extent.flush();
-}
+    }
 
 }
