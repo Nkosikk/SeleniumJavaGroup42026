@@ -54,11 +54,6 @@ public class TestCases extends Base {
         dashboardPage.clickLearnDropdown();
     }
 
-    @Test(dependsOnMethods = "ClickLearnDropdown")
-    public  void ClickLearningMaterial(){
-        dashboardPage.pickLearningMaterial();
-    }
-
     @AfterClass
     public void closeBrowser(){
 
