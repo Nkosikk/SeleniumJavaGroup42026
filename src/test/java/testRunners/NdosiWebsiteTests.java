@@ -1,11 +1,14 @@
 package testRunners;
 
-import org.testng.annotations.Test;
+import extentReport.ExtentReportManager;
+import org.testng.annotations.*;
 import pages.DashboardPage;
 import pages.HomePage;
 import pages.LoginPage;
 import utils.Base;
+import org.testng.annotations.AfterClass;
 
+@Listeners(ExtentReportManager.class)
 public class NdosiWebsiteTests extends Base {
 
     @Test(priority = 1)
@@ -15,6 +18,7 @@ public class NdosiWebsiteTests extends Base {
         homePage.verifyHomeScreenContent();
 
     }
+
     @Test(priority = 2)
     public void verifyLoginPage() {
         homePage.clickMainLoginButton();
@@ -27,5 +31,10 @@ public class NdosiWebsiteTests extends Base {
     public void verifyLoginFlowIsSuccessfulTest() {
         dashboardPage.verifyDashboardContent();
     }
+        @AfterClass
+        public void closeBrowser(){
+            driver.quit();
+        }
     }
+
 
