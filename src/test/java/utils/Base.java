@@ -9,9 +9,13 @@ import pages.LoginPage;
 public class Base {
 
     static final BrowserFactory factory = new BrowserFactory();
-    public static final WebDriver driver = factory.launchBrowser("chrome","https://ndosisimplifiedautomation.vercel.app/");
+
+    public static final WebDriver driver = factory.launchBrowser("","https://ndosisimplifiedautomation.vercel.app/");
+
     public HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+
     public LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+
     public DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
 
 }
