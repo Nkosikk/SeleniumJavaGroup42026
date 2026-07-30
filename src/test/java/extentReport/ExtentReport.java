@@ -34,24 +34,25 @@ public class ExtentReport implements ITestListener {
 
 
     }
+    @Override
     public void onTestFailure(ITestResult result){
         test = extent.createTest(result.getName());
         test.log(Status.FAIL,"Test case" + result.getMethod().getMethodName() +" Has failed");
         test.log(Status.FAIL, result.getThrowable());
 
     }
+    @Override
     public void onTestSuccess(ITestResult result){
         test = extent.createTest(result.getName());
         test.log(Status.PASS, "Test Case " + result.getMethod().getMethodName()+" Has passed");
     }
-
+    @Override
     public void onTestSkipped(ITestResult result){
         test = extent.createTest(result.getName());
         test.log(Status.SKIP,"Test Case " + result.getMethod().getMethodName()+" Has been Skipped");
 
     }
-
-    public void onFinish(ITestResult result){
+    public void onFinish(ITestContext context){
         extent.flush();
     }
 }
