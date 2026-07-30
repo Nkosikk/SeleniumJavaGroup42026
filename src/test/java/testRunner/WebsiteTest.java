@@ -15,7 +15,7 @@ public class WebsiteTest extends Base {
     @Test(priority = 2)
     public void submitLoginDetailsTest(){
         homePage.clickMainLoginButton();
-        loginPage.enterUsername("nkwanyana@gmail.com");
+        loginPage.enterUsername("maureenmayinga@gmail.com");
         loginPage.enterPassword("#12345678");
         loginPage.loginButton();
     }
