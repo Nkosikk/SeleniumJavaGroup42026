@@ -7,7 +7,7 @@ import utils.Base;
 import org.testng.annotations.AfterClass;
 
 @Listeners(extentReportManager.class)
-public class NdosiWebsiteTests extends Base {
+public class    NdosiWebsiteTests extends Base {
 
     @Test(priority = 1)
     public void verifyHomeContent() {

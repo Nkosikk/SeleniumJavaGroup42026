@@ -11,7 +11,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 
-public class AExtentReportManager  implements ITestListener {
+class extentReportManager  implements ITestListener {
 
     private static ExtentSparkReporter sparkReporter; //UI of the report
 
