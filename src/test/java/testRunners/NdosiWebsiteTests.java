@@ -1,14 +1,12 @@
 package testRunners;
 
-import extentReport.ExtentReportManager;
+import extentReport.extentReportManager;
 import org.testng.annotations.*;
-import pages.DashboardPage;
 import pages.HomePage;
-import pages.LoginPage;
 import utils.Base;
 import org.testng.annotations.AfterClass;
 
-@Listeners(ExtentReportManager.class)
+@Listeners(extentReportManager.class)
 public class NdosiWebsiteTests extends Base {
 
     @Test(priority = 1)

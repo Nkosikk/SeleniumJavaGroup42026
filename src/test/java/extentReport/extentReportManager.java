@@ -8,10 +8,9 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.testng.ITestListener;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-import org.testng.annotations.Test;
 
 
-public class AExtentReportManager  implements ITestListener {
+public class extentReportManager implements ITestListener {
 
     private static ExtentSparkReporter sparkReporter; //UI of the report
 
@@ -24,7 +23,7 @@ public class AExtentReportManager  implements ITestListener {
         sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "Reports/NdosiAutomationReport.xml");
         //System.out.println(System.getProperty("user.dir")+ "Reports/NdosiAutomationReport.xml");
         sparkReporter.config().setReportName("Ndosi Automation Test Report");
-        sparkReporter.config().setDocumentTitle("Ndosi Automation Test Report");
+        sparkReporter.config().setDocumentTitle("Ndosi Automation Report");
         sparkReporter.config().setEncoding("utf-8");
         sparkReporter.config().setTimeStampFormat("dd/MM/yyyy hh:mm:ss");
         sparkReporter.config().setTheme(Theme.DARK);
