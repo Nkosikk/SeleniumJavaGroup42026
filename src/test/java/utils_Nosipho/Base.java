@@ -12,3 +12,4 @@ public class Base {
        public  LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
         public DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
 }
+

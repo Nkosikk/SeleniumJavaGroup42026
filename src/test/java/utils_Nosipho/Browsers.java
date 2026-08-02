@@ -1,5 +1,6 @@
 package utils_Nosipho;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -26,6 +27,7 @@ public class Browsers {
        }
        driver.manage().window().maximize();
        driver.get(url);
+       driver.manage().window().setSize(new Dimension(1920,1080));
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
        return driver;
