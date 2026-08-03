@@ -17,10 +17,10 @@ public class BrowserFactory {
 
         if (browserChoice.equalsIgnoreCase("Chrome")) {
             driver = new ChromeDriver();
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--incognito");
-            options.addArguments("--headless=new");
-            driver = new ChromeDriver();
+          //  ChromeOptions options = new ChromeOptions();
+          // options.addArguments("--incognito");
+           // options.addArguments("--headless=new");
+           // driver = new ChromeDriver();
 
         } else if (browserChoice.equalsIgnoreCase("Firefox")) {
             driver = new FirefoxDriver();

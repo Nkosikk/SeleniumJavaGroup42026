@@ -1,6 +1,7 @@
 package testRunners;
 
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import utils.Base;
@@ -21,17 +22,18 @@ public class NdosiWebsiteTests extends Base {
         loginPage.enterPassword("@12345678");
         loginPage.loginButton();
 
+
     }
 
     @Test(dependsOnMethods = "submitLoginDetailsTest")
-    public void verifyLoginFlowIsSuccessfulTest(){
+    public void verifyLoginFlowIsSuccessfulTest() throws InterruptedException {
         dashboardPage.verifyDashboardContent();
     }
 
-   // @AfterClass
-   // public void closeBrowser(){
-    //    driver.quit();
-   // }
+    @AfterTest
+  public void closeBrowser(){
+       driver.quit();
+    }
     }
 
 

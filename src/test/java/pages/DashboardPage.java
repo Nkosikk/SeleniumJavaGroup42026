@@ -12,7 +12,9 @@ public class DashboardPage {
 
     }
 
-    public void verifyDashboardContent(){
+    public void verifyDashboardContent() throws InterruptedException {
+        Thread.sleep(4000);
         driver.findElement(welcomePage_xpath).isDisplayed();
+
     }
 }
