@@ -8,6 +8,10 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import utils.Base.*;
+import utils.TakeScreenshot;
+
+import static utils.Base.driver;
 
 public class ExtentReportManager implements ITestListener {
 
@@ -38,6 +42,7 @@ public class ExtentReportManager implements ITestListener {
         test = extent.createTest(result.getName());
         test.log(Status.FAIL, "Test case "+result.getMethod().getMethodName() + " has failed");
         test.log(Status.FAIL, result.getThrowable());
+        test.addScreenCaptureFromBase64String(TakeScreenshot.takeSnapshotBase64(driver), result.getName());
     }
 
 
@@ -45,6 +50,7 @@ public class ExtentReportManager implements ITestListener {
     public void onTestSuccess(ITestResult result){
         test = extent.createTest(result.getName());
         test.log(Status.PASS, "Test case "+result.getMethod().getMethodName());
+        test.addScreenCaptureFromBase64String(TakeScreenshot.takeSnapshotBase64(driver), result.getName());
 
     }
 
