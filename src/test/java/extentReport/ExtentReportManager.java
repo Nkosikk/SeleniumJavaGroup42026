@@ -8,8 +8,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import utils.Base.*;
-import utils.TakeScreenshot;
+import utils.TakeScreenshots;
 
 import static utils.Base.driver;
 
@@ -18,7 +17,6 @@ public class ExtentReportManager implements ITestListener {
     private static ExtentSparkReporter sparkReporter; //UI of the report
     private static ExtentReports extent; //Populate common information in the report
     private static ExtentTest test; //Creates test cases in the report
-
 
     @Override
     public void onStart(ITestContext context){
@@ -37,30 +35,27 @@ public class ExtentReportManager implements ITestListener {
 
     }
 
-    @Override
     public void onTestFailure(ITestResult result){
         test = extent.createTest(result.getName());
         test.log(Status.FAIL, "Test case "+result.getMethod().getMethodName() + " has failed");
         test.log(Status.FAIL, result.getThrowable());
-        test.addScreenCaptureFromBase64String(TakeScreenshot.takeSnapshotBase64(driver), result.getName());
-    }
+        test.addScreenCaptureFromBase64String(TakeScreenshots.getSnapShotBase64(driver),result.getName());
 
+    }
 
     @Override
     public void onTestSuccess(ITestResult result){
         test = extent.createTest(result.getName());
         test.log(Status.PASS, "Test case "+result.getMethod().getMethodName());
-        test.addScreenCaptureFromBase64String(TakeScreenshot.takeSnapshotBase64(driver), result.getName());
+        test.addScreenCaptureFromBase64String(TakeScreenshots.getSnapShotBase64(driver),result.getName());
 
     }
-
 
     @Override
     public void onTestSkipped(ITestResult result){
         test = extent.createTest(result.getName());
         test.log(Status.SKIP, "Test case "+result.getMethod().getMethodName());
     }
-
 
     @Override
     public void onFinish(ITestContext context){
