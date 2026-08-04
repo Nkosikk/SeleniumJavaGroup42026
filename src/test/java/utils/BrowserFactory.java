@@ -1,5 +1,6 @@
 package utils;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,9 +19,9 @@ public class BrowserFactory {
     public static WebDriver launchBrowser(String browserChoice, String url){
 
         if (browserChoice.equalsIgnoreCase("chrome")){
-//            ChromeOptions options = new ChromeOptions();
-//            options.addArguments("--incognito");
-//            options.addArguments("--headless=new");
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--incognito");
+            options.addArguments("--headless=new");
             driver = new ChromeDriver();
 
         }else if (browserChoice.equalsIgnoreCase("Firefox")){
@@ -34,6 +35,7 @@ public class BrowserFactory {
         }
         driver.manage().window().maximize();
         driver.get(url);
+        //driver.manage().window().setSize(new Dimension(1024, 1366));
        // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         return driver;
     }
