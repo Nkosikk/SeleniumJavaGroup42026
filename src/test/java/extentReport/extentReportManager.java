@@ -9,9 +9,12 @@ import org.testng.ITestListener;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.Test;
+import utils.Base;
+import utils.TakeScreenshots;
+import static utils.Base.driver;
 
 
-class extentReportManager  implements ITestListener {
+public class extentReportManager  implements ITestListener {
 
     private static ExtentSparkReporter sparkReporter; //UI of the report
 
@@ -40,12 +43,13 @@ class extentReportManager  implements ITestListener {
     test = extent.createTest(result.getName());
     test.log(Status.FAIL,"Test case" +result.getMethod().getMethodName() + "has failed");
     test.log(Status.FAIL, result.getThrowable());
+    test.addScreenCaptureFromBase64String(TakeScreenshots.getSnapShotBase64(driver), result.getName());
     }
 
     public void onTestSuccess(ITestResult result) {
         test = extent.createTest(result.getName());
         test.log(Status.PASS, "Test case " + result.getMethod().getMethodName() + "has passed");
-    }
+        test.addScreenCaptureFromBase64String(TakeScreenshots.getSnapShotBase64(driver), result.getName());    }
 
     public void onTestSkipped(ITestResult result) {
         test = extent.createTest(result.getName());
