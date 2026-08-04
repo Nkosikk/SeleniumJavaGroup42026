@@ -2,9 +2,9 @@ name: Selenium Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [Sinovuyo]
   pull_request:
-    branches: [main]
+    branches: [Sinovuyo]
 
 jobs:
   test:
