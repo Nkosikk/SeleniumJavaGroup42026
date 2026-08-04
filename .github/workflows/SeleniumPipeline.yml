@@ -4,7 +4,7 @@ on:
   push:
     branches: [Sinovuyo]
   pull_request:
-    branches: [Sinovuyo]
+    branches: [main]
 
 jobs:
   test:
