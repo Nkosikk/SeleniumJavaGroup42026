@@ -5,10 +5,13 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.Test;
+import utils.takeScreenshots;
+import static utils.Base.driver;
 
 public class ExtentReport implements ITestListener {
 
@@ -39,12 +42,14 @@ public class ExtentReport implements ITestListener {
         test = extent.createTest(result.getName());
         test.log(Status.FAIL,"Test case" + result.getMethod().getMethodName() +" Has failed");
         test.log(Status.FAIL, result.getThrowable());
+        test.addScreenCaptureFromBase64String(takeScreenshots.getSnapShotBase64(driver), result.getName());
 
     }
     @Override
     public void onTestSuccess(ITestResult result){
         test = extent.createTest(result.getName());
         test.log(Status.PASS, "Test Case " + result.getMethod().getMethodName()+" Has passed");
+        test.addScreenCaptureFromBase64String(takeScreenshots.getSnapShotBase64(driver), result.getName());
     }
     @Override
     public void onTestSkipped(ITestResult result){
