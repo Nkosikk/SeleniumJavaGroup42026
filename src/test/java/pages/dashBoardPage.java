@@ -26,6 +26,6 @@ public class dashBoardPage {
     public void verifyDashboardPage(){
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(welcomePage_xpath));
         //driver.findElement(DashBoard_tag).isDisplayed();
-        ((WebElement) welcomePage_xpath).isDisplayed();
+        welcomePage_xpath.isDisplayed();
     }
 }
