@@ -21,7 +21,7 @@ public class ReadFromDataBase {
               while (resultSet.next()){
                   getUsername = resultSet.getString("email");
                   getPassword = resultSet.getString("password");
-                  System.out.println("Email "+getUsername+", Password "+getPassword);
+                  //System.out.println("Email "+getUsername+", Password "+getPassword);
               }
           }
       } catch (SQLException e){

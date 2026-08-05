@@ -1,9 +1,15 @@
 package testRunners;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import testData.ReadFromDataBase;
 import utils.Base;
 
 public class NdosiWebsiteTests extends Base {
 
+    @BeforeTest
+    public void setup(){
+        ReadFromDataBase.dbConnection();
+    }
     @Test
     public void verifyHomeContentTest() {
      homePage.verifyHomeScreenContent();
@@ -12,8 +18,8 @@ public class NdosiWebsiteTests extends Base {
     @Test(priority = 1)
     public void submitLoginScreenTest(){
         homePage.clickMainLoginButton();
-        loginPage.enterEmail("ituselenium@ndosi.co.za");
-        loginPage.enterPassword("@1234567#");
+        loginPage.enterEmail(ReadFromDataBase.getUsername);
+        loginPage.enterPassword(ReadFromDataBase.getPassword);
         loginPage.selectLogin();
     }
 
