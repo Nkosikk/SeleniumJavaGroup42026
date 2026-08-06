@@ -2,7 +2,7 @@ name: Selenium Pipeline
 
 on:
   push:
-    branches: [ItumelengK_Playground]
+    branches: [main]
   pull_request:
-    branches: [ItumelengK_playground]
+    branches: [main]
 
