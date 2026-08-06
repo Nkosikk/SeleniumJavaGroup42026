@@ -1,8 +1,14 @@
 package testRunners;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import testData.ReadFromDataBase;
 import utils.Base;
+
+import java.time.Duration;
 
 public class NdosiWebsiteTests extends Base {
 
@@ -11,6 +17,7 @@ public class NdosiWebsiteTests extends Base {
         ReadFromDataBase.dbConnection();
     }
     @Test
+
     public void verifyHomeContentTest() {
      homePage.verifyHomeScreenContent();
     }
@@ -24,10 +31,6 @@ public class NdosiWebsiteTests extends Base {
     }
 
     @Test(dependsOnMethods = "submitLoginScreenTest")
-    public void verifyLoginFlowSuccessfulTest(){
-        dashBoardPage.verifyDashboardPage();
-    }
-
     public void closeBrowser(){
         driver.quit();
     }

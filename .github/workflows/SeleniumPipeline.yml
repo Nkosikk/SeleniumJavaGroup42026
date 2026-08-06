@@ -1,0 +1,8 @@
+name: Selenium Pipeline
+
+on:
+  push:
+    branches: [ItumelengK_Playground]
+  pull_request:
+    branches: [ItumelengK_playground]
+
