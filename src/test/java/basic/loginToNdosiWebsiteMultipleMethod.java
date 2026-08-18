@@ -32,12 +32,12 @@ public class loginToNdosiWebsiteMultipleMethod {
     public void enterEmail() throws InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.id("login-email")).isDisplayed();
-        driver.findElement(By.id("login-email")).sendKeys("njceles@gmail.com");
+        driver.findElement(By.id("login-email")).sendKeys("pabalelo@gmail.com");
     }
 
     @Test(dependsOnMethods = "enterEmail")
     public void enterPassword() {
-        driver.findElement(By.id("login-password")).sendKeys("@12345678");
+        driver.findElement(By.id("login-password")).sendKeys("#12345678");
     }
 
     @Test(dependsOnMethods = "enterPassword")

@@ -19,8 +19,8 @@ public class loginToNdosiWebsiteOneMethod {
         driver.manage().window().maximize();
         driver.findElement(By.xpath("//*[@id=\"app-root\"]/nav/div[1]/div[3]/button/span[2]")).click();
         Thread.sleep(2000);
-        driver.findElement(By.id("login-email")).sendKeys("njceles@gmail.com");
-        driver.findElement(By.id("login-password")).sendKeys("@12345678");
+        driver.findElement(By.id("login-email")).sendKeys("pabalelo@gmail.com");
+        driver.findElement(By.id("login-password")).sendKeys("#12345678");
         driver.findElement(By.id("login-submit")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"app-root\"]/nav/div[1]/div[3]/div/button/span[1]")).isDisplayed();
