@@ -18,7 +18,7 @@ public class loginToNdosiWebsiteMultipleMethod {
     public void setup() throws InterruptedException {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://ndosisimplifiedautomation.vercel.app/#overview");
+        driver.get("https://ndosisimplifiedautomation.vercel.app");
         Thread.sleep(2000);
 
     }
