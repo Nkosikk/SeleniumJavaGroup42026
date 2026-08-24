@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class BrowserFactory {
 
-    static WebDriver driver;
+    static WebDriver driverFact;
 
 
     public static WebDriver launchBrowser(String browserName, String url) {
@@ -24,24 +24,33 @@ public class BrowserFactory {
             //options.addArguments("--disable-notifications");// blocks the alert messages
             options.addArguments("--incognito"); // opens incognito mode
 
-            driver = new ChromeDriver(options);
+            driverFact = new ChromeDriver(options);
 
         } else if (browserName.equalsIgnoreCase("Firefox")) {
-            driver = new FirefoxDriver();
+            driverFact = new FirefoxDriver();
 
         } else if (browserName.equalsIgnoreCase("Safari")) {
-            driver = new SafariDriver();
+            driverFact = new SafariDriver();
 
         } else {
-            driver = new EdgeDriver();
+            driverFact = new EdgeDriver();
         }
-        driver.manage().window().maximize();
-        driver.get(url);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driverFact.manage().window().maximize();
+        driverFact.get(url);
+        driverFact.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         System.out.println("Browser Launched!");
 
-        return driver;
+        return driverFact;
     }
+
+    public static void tearDownBrowser() {
+
+        if (driverFact != null) {
+            driverFact.quit();
+        }
+    }
+
+
 
 
 }

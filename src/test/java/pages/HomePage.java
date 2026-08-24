@@ -4,26 +4,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.Base;
 
-public class HomePage extends Base {
+public class HomePage {
 
-    WebDriver driver;
+    WebDriver driverHome;
     By homeScreen_xpath = By.xpath("//div[@class='nav-items']/button/span[contains(text(), 'Home')]");
     By navLoginButton = By.xpath("//div[@class='nav-user-section']/button/span[contains(text(), 'Login')]");
 
     public HomePage(WebDriver drive){
-        this.driver= drive;
+        this.driverHome= drive;
 
     }
 
     public void homepageVerifyContent(){
 
-        driver.findElement(homeScreen_xpath).isDisplayed();
+        driverHome.findElement(homeScreen_xpath).isDisplayed();
 
     }
 
-    public void clickMainLoginButton (){
+    public void clickMainLoginButton () throws InterruptedException {
 
-        driver.findElement(navLoginButton).click();
+        driverHome.findElement(navLoginButton).click();
+        Thread.sleep(2000);
 
     }
 
