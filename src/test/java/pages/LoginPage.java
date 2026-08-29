@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class LoginPage  {
 
@@ -15,27 +16,49 @@ public class LoginPage  {
     By signUpPageLink = By.id("signup-toggle");
 
     public LoginPage(WebDriver drive){
+
         this.driverLog = drive;
     }
 
     public void verifyLoginPage(){
-        driverLog.findElement(loginFormTitle).isDisplayed();
-        System.out.println("Login page/form verified");
+        Assert.assertTrue(driverLog.findElement(loginFormTitle).isDisplayed(),"Login page/form verified ");
+
     }
 
-    public void inputLoginCredentials() throws InterruptedException {
+    public void inputLoginEmail(String email) throws InterruptedException {
 
-        driverLog.findElement(loginEmailInput).sendKeys("demonslayer@gmail.com");
-        driverLog.findElement(loginPasswordInput).sendKeys("Hashira@2026");
+        driverLog.findElement(loginEmailInput).sendKeys(email);
+
+        Thread.sleep(2000);
+        System.out.println("Email inserted");
+    }
+
+    public void inputLoginPassword(String passWord) throws InterruptedException {
+
+        driverLog.findElement(loginPasswordInput).sendKeys(passWord);
         driverLog.findElement(loginSeePassword).click();
         Thread.sleep(2000);
-        System.out.println("Email and password inserted");
+        System.out.println("Password inserted");
+
     }
+
+
 
     public void clickLoginButton(){
 
         driverLog.findElement(loginButton).click();
     }
 
+    public void forgotPasswordNav(){
+
+        driverLog.findElement(forgotPassword).click();
+
+    }
+
+    public void navigateToSignup(){
+
+        driverLog.findElement(signUpPageLink).click();
+
+    }
 
 }

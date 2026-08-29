@@ -3,7 +3,7 @@ package testRunners;
 import org.testng.annotations.Test;
 import utils.Base;
 
-public class NdosiWebsiteTests extends Base {
+public class NdosiTestings extends Base {
 
     @Test
     public void verifyHomeTest(){
@@ -15,7 +15,7 @@ public class NdosiWebsiteTests extends Base {
 
     }
 
-    @Test(dependsOnMethods = "verifyHomeTest")
+    @Test
     public void NavigateToLoginPageTest() throws InterruptedException {
 
         homePage.clickMainLoginButton();
@@ -23,26 +23,33 @@ public class NdosiWebsiteTests extends Base {
 
     }
 
-    @Test(dependsOnMethods = "NavigateToLoginPageTest")
-    public void verifyLoginPageTest(){
+    @Test
+
+    public void verifyLoginPageTest() throws InterruptedException {
+
+        homePage.clickMainLoginButton();
         loginPage.verifyLoginPage();
     }
 
-    @Test(dependsOnMethods ="verifyLoginPageTest" )
+    @Test
     public void insertLoginCredentials() throws InterruptedException {
+        homePage.clickMainLoginButton();
         loginPage.inputLoginEmail("demonslayer@gmail.com");
         loginPage.inputLoginPassword("Hashira@2026");
         loginPage.clickLoginButton();
     }
 
-    @Test(dependsOnMethods = "insertLoginCredentials" )
+    @Test
     public void VerifyDashBoardPageTest() throws InterruptedException {
+
+        homePage.clickMainLoginButton();
+        loginPage.inputLoginEmail("demonslayer@gmail.com");
+        loginPage.inputLoginPassword("Hashira@2026");
+        loginPage.clickLoginButton();
 
         dashboardPage.verifyDashBoardPageContent();
         System.out.println("ALLS GOOD");
         Thread.sleep(2000);
     }
 
-
 }
-

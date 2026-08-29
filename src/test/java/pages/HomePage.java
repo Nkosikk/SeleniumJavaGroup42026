@@ -1,5 +1,6 @@
 package pages;
 
+import components.Navbar;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.Base;
@@ -7,11 +8,14 @@ import utils.Base;
 public class HomePage {
 
     WebDriver driverHome;
+    Navbar navbar;
     By homeScreen_xpath = By.xpath("//div[@class='nav-items']/button/span[contains(text(), 'Home')]");
-    By navLoginButton = By.xpath("//div[@class='nav-user-section']/button/span[contains(text(), 'Login')]");
+
 
     public HomePage(WebDriver drive){
         this.driverHome= drive;
+        this.navbar = new Navbar(driverHome);
+
 
     }
 
@@ -23,8 +27,8 @@ public class HomePage {
 
     public void clickMainLoginButton () throws InterruptedException {
 
-        driverHome.findElement(navLoginButton).click();
-        Thread.sleep(2000);
+     navbar.NavigateToLoginPage();
+     Thread.sleep(2000);
 
     }
 
