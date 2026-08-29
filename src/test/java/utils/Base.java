@@ -2,8 +2,10 @@ package utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import pages.DashBoardPage;
@@ -17,7 +19,7 @@ public class Base {
     public static LoginPage loginPage;
     public static DashBoardPage dashboardPage;
 
-    @BeforeMethod
+    @BeforeClass
     public void setup() {
         driverBase = BrowserFactory.launchBrowser(
                 "chrome",
@@ -31,7 +33,7 @@ public class Base {
         dashboardPage=PageFactory.initElements(driverBase, DashBoardPage.class);
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         BrowserFactory.tearDownBrowser();
     }

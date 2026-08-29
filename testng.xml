@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <listeners>
+        <listener class-name="extentReport.ExtentReportManager"></listener>
+
+
+
+    </listeners>
+
+    <test verbose="2" preserve-order="true" name="C:/Users/thato/Documents/SeleniumGroup4/Java/SeleniumJavaGroup42026">
+        <classes>
+            <class name="testRunners.NdosiWebsiteTests">
+                <methods>
+                    <include name="verifyHomeTest"/>
+                    <include name="NavigateToLoginPageTest"/>
+                    <include name="verifyLoginPageTest"/>
+                    <include name="insertLoginCredentials"/>
+                    <include name="VerifyDashBoardPageTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

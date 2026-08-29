@@ -20,49 +20,49 @@ public class ExtentReportManager implements ITestListener {
     @Override
     public void onStart(ITestContext context) {
 
-        sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"/Reports/Execution-Reports.xml");
+        sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/Reports/Execution-Reports.xml");
 
         System.out.println(System.getProperty("user.dir"));
-        sparkReporter.config().setDocumentTitle("Sauce Demo Automation");
+        sparkReporter.config().setDocumentTitle("Ndosi Automation");
         sparkReporter.config().setReportName("Functional-Tests");
         sparkReporter.config().setTheme(Theme.DARK);
 
-        extent= new ExtentReports();
+        extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
-        extent.setSystemInfo("OS: ",System.getProperty("os.name"));
-        extent.setSystemInfo("Execution machine: ",System.getProperty("user.name"));
-        extent.setSystemInfo("Browser: ","Chrome");
-        extent.setSystemInfo("Test Environment: ","Staging");
+        extent.setSystemInfo("Operating System", System.getProperty("os.name"));
+        extent.setSystemInfo("Execution machine", System.getProperty("user.name"));
+        extent.setSystemInfo("Browser", "Chrome");
+        extent.setSystemInfo("Test Environment", "Staging");
 
     }
 
     @Override
-    public void onTestFailure(ITestResult result){
+    public void onTestFailure(ITestResult result) {
 
-     test= extent.createTest(result.getName());
-     test.log(Status.FAIL,"Test case "+ result.getMethod().getMethodName()+" has failed");
-     test.log(Status.FAIL, result.getThrowable()); // will get us some errors that caused test to fail
-
-    }
-
-    @Override
-    public void onTestSuccess(ITestResult result){
-
-        test= extent.createTest(result.getName());
-        test.log(Status.PASS, "Test case "+ result.getMethod().getMethodName()+ " passed successfully");
+        test = extent.createTest(result.getName());
+        test.log(Status.FAIL, "Test case " + result.getMethod().getMethodName() + " has failed");
+        test.log(Status.FAIL, result.getThrowable()); // will get us some errors that caused test to fail
 
     }
 
     @Override
-    public void onTestSkipped(ITestResult result){
+    public void onTestSuccess(ITestResult result) {
 
-        test= extent.createTest(result.getName());
-        test.log(Status.SKIP, "Test case "+ result.getMethod().getMethodName());
+        test = extent.createTest(result.getName());
+        test.log(Status.PASS, "Test case " + result.getMethod().getMethodName() + " passed successfully");
 
     }
 
     @Override
-    public void onFinish(ITestContext context){
+    public void onTestSkipped(ITestResult result) {
+
+        test = extent.createTest(result.getName());
+        test.log(Status.SKIP, "Test case " + result.getMethod().getMethodName());
+
+    }
+
+    @Override
+    public void onFinish(ITestContext context) {
         extent.flush();
 
     }
