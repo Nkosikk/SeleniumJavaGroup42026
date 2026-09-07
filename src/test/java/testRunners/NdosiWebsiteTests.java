@@ -1,10 +1,17 @@
 package testRunners;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import testData.ReadFromDatabase;
 import utils.Base;
 
 
 public class NdosiWebsiteTests extends Base {
+
+    @BeforeClass
+    public void dbSetup() {
+        ReadFromDatabase.databaseConnect();
+    }
 
     @Test
     public void verifyHomePageTest(){
@@ -30,8 +37,8 @@ public class NdosiWebsiteTests extends Base {
 
     @Test(dependsOnMethods ="verifyLoginPageTest" )
     public void inputCredentialAndVerifyLoggedIn()  {
-        loginPage.inputLoginEmail("demonslayer@gmail.com");
-        loginPage.inputLoginPassword("Hashira@2026");
+        loginPage.inputLoginEmail(ReadFromDatabase.getUsername);
+        loginPage.inputLoginPassword(ReadFromDatabase.getPassword);
         loginPage.clickLoginButton();
 
         dashboardPage.verifyDashBoardPageContent();
