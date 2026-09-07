@@ -7,51 +7,51 @@ public class Navbar {
 
     WebDriver driverNav;
 
-    By homeLink = By.xpath("//button[@class ='nav-item active']/span[contains(text(), 'Home')]");
-    By aboutUsLink = By.xpath("//button[@class ='nav-item ']/span[contains(text(), 'About Us')]");
-    By testimonialsLink = By.xpath("//button[@class ='nav-item ' ]/span[contains(text(), 'Testimonials')]");
-    By mentorsLink = By.xpath("//button[@class ='nav-item ' ]/span[contains(text(), 'Mentors')]");
-    By graduatesLink = By.xpath("//button[@class ='nav-item ' ]/span[contains(text(), 'Graduates')]");
-    By contactUsLink = By.xpath("//button[@class ='nav-item ' ]/span[contains(text(), 'Contact Us')]");
+    private final By homeLink = By.xpath("//button[@class ='nav-item active']/span[contains(text(), 'Home')]");
+    private final By aboutUsLink = By.xpath("//button[@class ='nav-item ']/span[contains(text(), 'About Us')]");
+    private final By testimonialsLink = By.xpath("//button[@class ='nav-item ' ]/span[contains(text(), 'Testimonials')]");
+    private final By mentorsLink = By.xpath("//button[@class ='nav-item ' ]/span[contains(text(), 'Mentors')]");
+    private final By graduatesLink = By.xpath("//button[@class ='nav-item ' ]/span[contains(text(), 'Graduates')]");
+    private final By contactUsLink = By.xpath("//button[@class ='nav-item ' ]/span[contains(text(), 'Contact Us')]");
 
     //Learn dropdown elements
-    By learnLink = By.xpath("//button[@class ='nav-dropdown-trigger  ' ]/span[text()='Learn']");
+    private final By learnLink = By.xpath("//button[@class ='nav-dropdown-trigger  ' ]/span[text()='Learn']");
 
-    By curriculumOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[contains( text(), 'Curriculum')]");
-    By learningMaterialsOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Learning Materials']");
-    By performanceTestingOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Performance Testing']");
+    private final By curriculumOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[contains( text(), 'Curriculum')]");
+    private final By learningMaterialsOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Learning Materials']");
+    private final By performanceTestingOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Performance Testing']");
 
 
     //Connect dropdown elements
-    By connectLink = By.xpath("//button[@class ='nav-dropdown-trigger  ' ]/span[text()='Connect']");
+    private final By connectLink = By.xpath("//button[@class ='nav-dropdown-trigger  ' ]/span[text()='Connect']");
 
-    By enrolOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Enrol Now']");
-    By privacyPolicyOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Privacy Policy']");
-    By termsAndConditionsOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Terms and Conditions']");
+    private final By enrolOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Enrol Now']");
+    private final By privacyPolicyOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Privacy Policy']");
+    private final By termsAndConditionsOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Terms and Conditions']");
 
 
     // Logged-in elements
 
     //My learning dropdown elements
-    By myLearningLink = By.xpath("//button[@class ='nav-dropdown-trigger  ' ]/span[text()='My Learning']");
+    private final By myLearningLink = By.xpath("//button[@class ='nav-dropdown-trigger  ' ]/span[text()='My Learning']");
 
-    By dashboardOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Dashboard']");
-    By myCoursesOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'My Courses']");
-    By paymentsOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Payments']");
-    By recordingsOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Recordings']");
+    private final By dashboardOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Dashboard']");
+    private final By myCoursesOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'My Courses']");
+    private final By paymentsOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Payments']");
+    private final By recordingsOption = By.xpath("//button[@class= 'nav-dropdown-item ']/span[text()= 'Recordings']");
 
 
     //Menu dropdown elements
-    By menuButton = By.xpath("//button[@class ='user-pill open' ]/span[text()='Menu']");
+    private final By menuButton = By.xpath("//button[@class ='user-pill open' ]/span[text()='Menu']");
 
-    By myProfileOption = By.xpath("//button[@class = 'nav-dropdown-item ']/span[text()= 'My Profile']");
-    By writeReviewOption = By.xpath("//button[@class = 'nav-dropdown-item']/span[text()='Write Review']");
-    By instructorPanelOption = By.xpath("//button[@class = 'nav-dropdown-item']/span[text()='Instructor Panel']");
-    By adminPanelOption = By.xpath("//button[@class = 'nav-dropdown-item']/span[text()='Admin Panel']");
-    By logoutOption = By.xpath("//button[@class = 'nav-dropdown-item']/span[text()='Logout']");
+    private final By myProfileOption = By.xpath("//button[@class = 'nav-dropdown-item ']/span[text()= 'My Profile']");
+    private final By writeReviewOption = By.xpath("//button[@class = 'nav-dropdown-item']/span[text()='Write Review']");
+    private final By instructorPanelOption = By.xpath("//button[@class = 'nav-dropdown-item']/span[text()='Instructor Panel']");
+    private final By adminPanelOption = By.xpath("//button[@class = 'nav-dropdown-item']/span[text()='Admin Panel']");
+    private final By logoutOption = By.xpath("//button[@class = 'nav-dropdown-item']/span[text()='Logout']");
 
     // Logged-out element
-    By mainLoginButtonLink = By.xpath("//button[@class = 'user-pill']/span[text()='Login']");
+    private final By mainLoginButtonLink = By.xpath("//button[@class = 'user-pill']/span[text()='Login']");
 
 
     public Navbar(WebDriver drive) {

@@ -14,6 +14,8 @@ target/
 *.ipr
 .idea/
 Reports/
+src\test\java\utils/Base_1st_version.txt
+
 ### Eclipse ###
 .apt_generated
 .classpath
