@@ -2,7 +2,7 @@ name: Selenium java Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, TMS_class ]
   pull_request:
     branches: [ main ]
 
