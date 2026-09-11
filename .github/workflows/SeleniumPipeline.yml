@@ -28,7 +28,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Selenium-report
+          name: Selenium-Extent-Report
           path: Reports/
 
 
