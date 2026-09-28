@@ -16,7 +16,7 @@ public class ReadFromDatabase {
         try (Connection connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword)) {
 
             try (Statement statement = connection.createStatement();
-                 ResultSet resultSet = statement.executeQuery("SELECT * FROM users WHERE ID =2")) {
+                 ResultSet resultSet = statement.executeQuery("SELECT * FROM users_exs WHERE ID =1")) {
 
                 while (resultSet.next()) {
 
